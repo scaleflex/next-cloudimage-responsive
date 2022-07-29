@@ -258,6 +258,11 @@ chalk@^4.0.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
+cloudimage-responsive-utils@^2.4.9:
+  version "2.4.9"
+  resolved "https://registry.yarnpkg.com/cloudimage-responsive-utils/-/cloudimage-responsive-utils-2.4.9.tgz#827828496b39648d2d1e1bd7cc85d9c50c2eab66"
+  integrity sha512-25+acgALV7k26s6jvEJh7YDinVMs/Qcrvawk9yuRp29bCZ3ArgPyuRMFAeSeoBNSf+xnA4F1sx00mIm8pNF7DQ==
+
 color-convert@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-2.0.1.tgz#72d3a68d598c9bdb3af2ad1e84f21d896abd4de3"

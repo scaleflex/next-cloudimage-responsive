@@ -1,0 +1,19 @@
+.ci-fill-image > span:nth-child(1),
+.ci-fill-image img:nth-child(1) {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
+
+.ci-responsive-image > span:nth-child(1),
+.ci-responsive-image img:nth-child(1) {
+  width: 100% !important;
+  position: absolute !important;
+  height: unset !important;
+}
+
+.ci-fixed-image > span:nth-child(1),
+.ci-fixed-image img:nth-child(1) {
+  position: absolute !important;
+}
