@@ -1,13 +1,12 @@
+import { useRef, useState } from 'react';
 import Image from 'next/image';
 import { getImgSRC } from 'cloudimage-responsive-utils';
-import { useState } from 'react';
-import { parseParams } from './parse-params';
-import { parseImageSrc } from './parse-url';
+
+import { computeImageStyles, getWrapperClassname, computeImageSize } from './utils/compute';
+import { parseAlt, parseParams, parseImageSrc } from './utils/parse';
+import { WRAPPER_STYLES } from './styles.constants';
+
 import classes from './normalize.styles.module.css';
-import {
-  wrapperStyles, computeImageStyles, getWrapperClassname, computeImageSize,
-} from './compute-styles';
-import { parseAlt } from './parse-alt';
 
 
 function Img(props) {
@@ -15,21 +14,23 @@ function Img(props) {
 
   const {
     customDomain, domain, token, apiVersion,
-    doNotReplaceURL: imagesDoNotReplaceURL, baseURL, params,
+    doNotReplaceURL: imagesDoNotReplaceURL, baseURL, params: imagesParams,
     quality: imagesQuality, layout: imagesLayout, objectFit: imagesObjectFill,
     lowPreviewQuality: imagesLowPreviewQuality, transitionDuration: imagesTransitonDuration,
   } = config;
 
   const {
-    quality = imagesQuality, src,
+    quality = imagesQuality, src, params = imagesParams,
     layout = imagesLayout, objectFit = imagesObjectFill,
     lowPreviewQuality = imagesLowPreviewQuality, onload,
     width, height, doNotReplaceURL = imagesDoNotReplaceURL,
     wrapperClassname, alt, transitionDuration = imagesTransitonDuration,
+    style = {},
   } = props;
 
   const [loaded, setLoaded] = useState(false);
 
+  const wrapperRef = useRef();
   const cName = customDomain ? domain : `${token}.${domain}`;
   const _params = parseParams(params);
 
@@ -60,7 +61,8 @@ function Img(props) {
 
   return (
     <div
-      style={wrapperStyles}
+      ref={wrapperRef}
+      style={{ ...WRAPPER_STYLES, ...style }}
       className={`${classes[getWrapperClassname(layout)]}${wrapperClassname ? `${wrapperClassname}` : ''}`}
     >
       <Image

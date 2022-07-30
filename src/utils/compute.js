@@ -1,14 +1,6 @@
-import { LAYOUTS } from './constants';
+import { LAYOUTS } from '../constants';
+import { LOADED_IMAGE_STYLES } from '../styles.constants';
 
-
-const wrapperStyles = {
-  position: 'relative',
-  height: '100%',
-};
-
-const loadedImageStyles = {
-  opacity: 1,
-};
 
 const computeImageStyles = (loaded, transitionDuration) => ({
   transitionTimingFunction: 'ease',
@@ -17,7 +9,7 @@ const computeImageStyles = (loaded, transitionDuration) => ({
   transitionDelay: '100ms',
   transitionProperty: 'opacity, transform',
   opacity: 0,
-  ...(loaded ? loadedImageStyles : {}),
+  ...(loaded ? LOADED_IMAGE_STYLES : {}),
 });
 
 const getWrapperClassname = (layout) => {
@@ -48,7 +40,6 @@ const computeImageSize = (layout, width, height) => {
 };
 
 export {
-  wrapperStyles,
   computeImageStyles,
   getWrapperClassname,
   computeImageSize,

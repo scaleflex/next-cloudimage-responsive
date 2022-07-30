@@ -1,5 +1,6 @@
 import { createContext, useMemo } from 'react';
-import { generateConfig } from './generate-config';
+
+import { generateConfig } from './utils/generate-config';
 
 
 const CloudimageContext = createContext({ cloudImageConfig: {} });

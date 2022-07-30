@@ -1,0 +1,41 @@
+.content-wrapper .header {
+  display: flex;
+  justify-content: space-between;
+  padding: 23.5px 24.5px 0 24.5px;
+}
+
+.content-wrapper .header .header-logo {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+}
+
+.content-wrapper .header-logo .cloud-img-title {
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  border-left: 1px solid #b8c4d0;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 500;
+  color: #203254;
+}
+
+.content-wrapper .header .navbar {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.content-wrapper .header .navbar a {
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 16.94px;
+  color: #5d6d7e;
+}
+
+.content-wrapper .header .navbar .stars-numbers {
+  width: 65px;
+  height: 20px;
+}
