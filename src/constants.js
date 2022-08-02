@@ -8,6 +8,7 @@ const DEFAULT_VALUES = {
   apiVersion: 'v7',
   params: 'org_if_sml=1',
   doNotReplaceURL: false,
+  limitFactor: 100,
   quality: 75,
   layout: 'fill',
   objectFit: 'cover',

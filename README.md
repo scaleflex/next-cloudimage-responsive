@@ -63,6 +63,9 @@ Cloudimage, contact us at
 * [Step 2: Initialize](#initialize)
 * [Step 3: Implement](#implement)
 * [Configuration](#configuration)
+* [Client-side onfiguration](#client_side_config)
+* [Server-side onfiguration](#server_side_config)
+* [Client-side vs Server-side](#client_side_vs_server_side)
 * [Image properties](#image_properties)
 * [Browser support](#browser_support)
 * [Filerobot UI Family](#ui_family)
@@ -262,12 +265,40 @@ params: {
 
 [Full cloudimage v7 documentation here.](https://docs.cloudimage.io/go/cloudimage-documentation-v7/en/introduction)
 
-## <a name="configuration"></a> server-side rendering (SSR) vs client-side rendering (CSR)
+## <a name="client_side_vs_server_side"></a> server-side rendering (SSR) vs client-side rendering (CSR)
 Despite the plugin **by default** rendering the low-preview image on the server and on the client it renders the optimized image relative to the container size. you can render both low-preview and optimized images on the server-side.
-by using <a href="#ssr_config">srr</a> config.
+by using <a href="#server-side">srr</a> config.
 
-## <a name="ssr_config"></a> server-side config
-### <a name="ssr_prop"></a> ssr
+## <a name="client_side_config"></a> client-side config
+
+### limitFactor
+
+###### Type: **Number** | Default: **100** | _optional_
+
+Rounds up the size of an image to the nearest limitFactor value.
+
+For example:
+* for an image with width **358px** and limitFactor equal to **100**, the plugin will round up to 400px;
+* for an image with width **358px** and limitFactor equal to **5**, the plugin will round up to 360px.
+
+### devicePixelRatioList
+
+###### Type: **[Number,...]** | Default: **[1, 1.5, 2]** | _optional_
+
+List of supported device pixel ratios. If there is no need to support retina devices, you should set an empty array `devicePixelRatioList: []`.
+
+### lazyLoadOffset
+
+######  Type: **Number/Array(Number)** | Default: **100**
+
+Say if you want to preload a component even if it's 100px below the viewport (user have to scroll 100px more to see this component), you can set offset props to 100. On the other hand, if you want to delay loading a component even if it's top edge has already appeared at viewport, set offset to negative number.
+
+Library supports horizontal lazy load out of the box. So when you provide this prop with number like 100 it will automatically set left edge offset to 100 and top edge to 100;
+
+If you provide this prop with array like [100, 200], it will set left edge offset to 100 and top offset to 200.
+
+## <a name="server_side_config"></a> server-side config
+### <a name="server-side"></a> ssr
 
 ###### Type: **Boolean** | Default: **false**
 
@@ -320,6 +351,7 @@ Set it to `0ms` to disable animation.
 ## <a name="image_properties"></a> Image properties
 The following config can be used per-image basis.
 <ul>
+<li><a href="#lazy_loading_config">lazyLoading</a></li>
 <li><a href="#do_not_replace_url">doNotReplaceURL</a></li>
 <li><a href="#params">params</a></li>
 <li><a href="#low_preview_quality">lowPreviewQuality</a></li>
@@ -358,14 +390,14 @@ A function to be executed after the image is loaded
 ###### Type: **String** (e.g. 300px, 20vw) | Default: **undefined**
 
 If set, the plugin will use the width as a fixed value and change only according to the device pixel ratio.
-**NOTE: while using <a href="#ssr_prop">ssr</a> consider to set a suitable <a href="layout">layout</a> to the image.**
+**NOTE: while using <a href="#server-side">ssr</a> consider to set a suitable <a href="layout">layout</a> to the image.**
 
 ### height
 
 ###### Type: **String** (e.g. 300px, 20vh) | Default: **undefined**
 
 If set, the plugin will use the width as a fixed value and change only according to the device pixel ratio.
-**NOTE: while using <a href="#ssr_prop">ssr</a> consider to set a suitable <a href="layout">layout</a> to the image.**
+**NOTE: while using <a href="#server-side">ssr</a> consider to set a suitable <a href="layout">layout</a> to the image.**
 
 ## <a name="browser_support"></a>Browser support
 
