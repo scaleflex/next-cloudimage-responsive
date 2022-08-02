@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import { useRef } from 'react';
 import Header from '../demo/components/header';
 import Content from '../demo/components/content';
