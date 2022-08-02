@@ -24,16 +24,16 @@ function Sizes() {
           <p>Result: Dimensions | Size | Link</p>
         </div>
         <div className="table-row">
-          <p className="content"><span className="yellow-color">400 px</span></p>
-          <div className="content">
+          <p className="table-content"><span className="yellow-color">400 px</span></p>
+          <div className="table-content">
             <p>1</p>
             <p>2</p>
           </div>
-          <div className="content">
+          <div className="table-content">
             <p>400 px</p>
             <p>800 px</p>
           </div>
-          <div className="content">
+          <div className="table-content">
             <p>
               400 x 267 | 42.3 kb |
               {' '}
@@ -47,16 +47,16 @@ function Sizes() {
           </div>
         </div>
         <div className="table-row">
-          <p className="content"><span className="yellow-color">570 px</span></p>
-          <div className="content">
+          <p className="table-content"><span className="yellow-color">570 px</span></p>
+          <div className="table-content">
             <p>1</p>
             <p>2</p>
           </div>
-          <div className="content">
+          <div className="table-content">
             <p>600 px</p>
             <p>1200 px</p>
           </div>
-          <div className="content">
+          <div className="table-content">
             <p>
               600 x 400 | 91.5 kb |
               {' '}
@@ -70,16 +70,16 @@ function Sizes() {
           </div>
         </div>
         <div className="table-row">
-          <p className="content"><span className="yellow-color">720 px</span></p>
-          <div className="content">
+          <p className="table-content"><span className="yellow-color">720 px</span></p>
+          <div className="table-content">
             <p>1</p>
             <p>2</p>
           </div>
-          <div className="content">
+          <div className="table-content">
             <p>800 px</p>
             <p>1600 px</p>
           </div>
-          <div className="content">
+          <div className="table-content">
             <p>
               800 x 533 | 159 kb |
               {' '}
@@ -93,16 +93,16 @@ function Sizes() {
           </div>
         </div>
         <div className="table-row">
-          <p className="content"><span className="yellow-color">1170 px</span></p>
-          <div className="content">
+          <p className="table-content"><span className="yellow-color">1170 px</span></p>
+          <div className="table-content">
             <p>1</p>
             <p>2</p>
           </div>
-          <div className="content">
+          <div className="table-content">
             <p>1200 px</p>
             <p>2400 px</p>
           </div>
-          <div className="content">
+          <div className="table-content">
             <p>
               1200 x 800 | 337 kb |
               {' '}

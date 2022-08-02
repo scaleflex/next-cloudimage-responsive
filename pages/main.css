@@ -661,7 +661,7 @@ body {
   margin-top: 8px;
 }
 
-.numbers-section .images-dimensions-table .table-row .content {
+.numbers-section .images-dimensions-table .table-row .table-content {
   width: 160px;
   height: 64px;
   margin-right: 19px;
@@ -675,7 +675,7 @@ body {
   white-space: nowrap;
 }
 
-.numbers-section .table-row .content .cyan-color {
+.numbers-section .table-row .table-content .cyan-color {
   color: #3daba4;
   text-decoration: none;
 }
@@ -684,13 +684,13 @@ body {
   color: #7b9200;
 }
 
-.numbers-section .images-dimensions-table .table-row .content:nth-child(4) {
+.numbers-section .images-dimensions-table .table-row .table-content:nth-child(4) {
   width: 214px;
   margin-right: 0;
   text-align: left;
 }
 
-.numbers-section .images-dimensions-table .table-row .content:nth-child(1) {
+.numbers-section .images-dimensions-table .table-row .table-content:nth-child(1) {
   display: flex;
   justify-content: center;
 }

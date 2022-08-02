@@ -111,7 +111,7 @@ function Footer({ footerRef }) {
         <p>
           Made with ❤ by the
           <span>
-            <a href=" https://scaleflex.com/en/home" target="_blank">Scaleflex </a>
+            <a href=" https://scaleflex.com/en/home" target="_blank"> Scaleflex </a>
           </span>
           team, the guys behind
           <span>
