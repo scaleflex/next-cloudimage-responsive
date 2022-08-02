@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
     doNotReplaceURL: true,
     params: { org_if_sml: 1, ci_info: 2 },
     layout: 'fill',
-    ssr: false,
+    ssr: true,
   };
 
   return (

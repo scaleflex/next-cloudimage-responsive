@@ -9,8 +9,8 @@ const computeImageStyles = (loaded, transitionDuration, objectFit, objectPositio
   transitionDelay: '100ms',
   transitionProperty: 'opacity, transform',
   opacity: 0,
-  objectFit,
-  objectPosition,
+  ...(objectFit ? { objectFit } : {}),
+  ...(objectPosition ? { objectPosition } : {}),
   ...(loaded ? LOADED_IMAGE_STYLES : {}),
 });
 

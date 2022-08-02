@@ -1,6 +1,5 @@
 .ciFillImage > span:nth-child(1),
 .ciFillImage img:nth-child(1) {
-  object-fit: contain;
   width: 100% !important;
   position: relative !important;
   height: unset !important;
