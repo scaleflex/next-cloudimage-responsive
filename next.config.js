@@ -1,4 +1,3 @@
-/** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
@@ -12,4 +11,4 @@ const nextConfig = {
   } : {}),
 };
 
-module.exports = nextConfig;
+export default nextConfig;

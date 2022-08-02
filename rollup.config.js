@@ -15,11 +15,15 @@ export default {
       file: pkg.main,
       format: 'es',
       exports: 'named',
-      sourcemap: 'inline',
+      sourcemap: true,
       strict: true,
     },
   ],
-  plugins: [babel({ babelHelpers: 'runtime', presets: ['next/babel'] }),
+  plugins: [
+    babel({
+      babelHelpers: 'runtime',
+      presets: ['next/babel'],
+    }),
     commonjs(),
     css(),
   ],
