@@ -240,7 +240,6 @@ If set to **true** the plugin will only add query params to the given source of 
 ###### Type: **Bool** | Default: **true** | _optional_
 
 Only images close to the client's viewport will be loaded, hence accelerating the page loading time. The plugin uses
-[react-lazyload](https://github.com/twobin/react-lazyload) library to achieve it.
 
 ### <a name="params"></a> params
 
@@ -286,16 +285,6 @@ For example:
 ###### Type: **[Number,...]** | Default: **[1, 1.5, 2]** | _optional_
 
 List of supported device pixel ratios. If there is no need to support retina devices, you should set an empty array `devicePixelRatioList: []`.
-
-### lazyLoadOffset
-
-######  Type: **Number/Array(Number)** | Default: **100**
-
-Say if you want to preload a component even if it's 100px below the viewport (user have to scroll 100px more to see this component), you can set offset props to 100. On the other hand, if you want to delay loading a component even if it's top edge has already appeared at viewport, set offset to negative number.
-
-Library supports horizontal lazy load out of the box. So when you provide this prop with number like 100 it will automatically set left edge offset to 100 and top edge to 100;
-
-If you provide this prop with array like [100, 200], it will set left edge offset to 100 and top offset to 200.
 
 ## <a name="server_side_config"></a> server-side config
 ### <a name="server-side"></a> ssr

@@ -17,7 +17,7 @@ function Img(props) {
     doNotReplaceURL: imagesDoNotReplaceURL, baseURL, params: imagesParams,
     quality: imagesQuality, layout: imagesLayout, objectFit: imagesObjectFit,
     lowPreviewQuality: imagesLowPreviewQuality, transitionDuration: imagesTransitonDuration,
-    ssr: imagesSsr, objectPosition: imagesObjectPosition,
+    ssr: imagesSsr, objectPosition: imagesObjectPosition, lazyload: imagesLazyload,
   } = config;
 
   const {
@@ -27,6 +27,7 @@ function Img(props) {
     width, height, doNotReplaceURL = imagesDoNotReplaceURL,
     className, alt, transitionDuration = imagesTransitonDuration,
     style = {}, ssr = imagesSsr, children, background, objectPosition = imagesObjectPosition,
+    lazyload = imagesLazyload,
   } = props;
 
   const [loaded, setLoaded] = useState(false);
@@ -133,6 +134,7 @@ function Img(props) {
         alt={`low-preview-${alt || parseAlt(src)}`}
         {...computeImageSize(layout, width, height)}
       />
+
       {ssr ? (
         <Image
           src={src}
@@ -143,6 +145,7 @@ function Img(props) {
           objectPosition={objectPosition}
           style={computeImageStyles(loaded, transitionDuration)}
           onLoad={onImageLoad}
+          loading={lazyload ? 'lazy' : 'eager'}
           alt={alt || parseAlt(src)}
           {...computeImageSize(layout, width, height)}
         />
@@ -154,14 +157,14 @@ function Img(props) {
           onLoad={onImageLoad}
           style={computeImageStyles(loaded, transitionDuration, objectFit, objectPosition)}
           className={classes.ciSsgImage}
-          loading="lazy"
+          loading={lazyload ? 'lazy' : 'eager'}
         />
       )}
 
       {background && (
-      <div className={classes.ciBackgroundContent}>
-        {children}
-      </div>
+        <div className={classes.ciBackgroundContent}>
+          {children}
+        </div>
       )}
     </div>
   );

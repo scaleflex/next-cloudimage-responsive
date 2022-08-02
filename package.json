@@ -6,7 +6,8 @@
     "start": "next dev",
     "prepare": "npm run build",
     "build": "rollup -c",
-    "build-demo": "next build && next export"
+    "build-demo": "next build && next export && touch ./out/.nojekyll",
+    "deploy": "gh-pages -d out -t true"
   },
   "main": "dist/index.js",
   "author": "",
@@ -15,6 +16,7 @@
   "devDependencies": {
     "@babel/core": "^7.18.10",
     "@modular-css/rollup": "^28.2.2",
+    "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "eslint": "^7.32.0 || ^8.2.0",
@@ -23,11 +25,11 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "gh-pages": "^4.0.0",
     "next": "^12.1.6",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "rollup": "^2.77.2",
-    "@rollup/plugin-babel": "^5.3.1"
+    "rollup": "^2.77.2"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",

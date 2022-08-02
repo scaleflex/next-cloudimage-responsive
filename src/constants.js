@@ -17,6 +17,7 @@ const DEFAULT_VALUES = {
   objectPosition: 'center',
   devicePixelRatioList: [1, 1.5, 2],
   ssr: false,
+  lazyload: true,
 };
 
 const LAYOUTS = {
