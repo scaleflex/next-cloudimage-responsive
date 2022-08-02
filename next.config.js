@@ -7,6 +7,7 @@ const nextConfig = {
     loader: 'custom',
     path: 'https://scaleflex.cloudimg.io/',
   },
+  assetPrefix: '/next-cloudimage-responsive/',
 };
 
 module.exports = nextConfig;
