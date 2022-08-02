@@ -7,7 +7,7 @@
     "prepare": "npm run build",
     "build": "rollup -c",
     "build-demo": "next build && next export",
-    "deploy-demo": "gh-pages -d .next"
+    "deploy-demo": "gh-pages -d out"
   },
   "main": "dist/index.js",
   "author": "",
