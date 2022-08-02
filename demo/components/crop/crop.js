@@ -1,4 +1,4 @@
-import { Img } from '../../src';
+import { Img } from '../../../src';
 
 
 function Crop() {
@@ -15,16 +15,17 @@ function Crop() {
             <p>Resize your browser's window to see how it works.</p>
             <Img
               src="shayna-douglas-VibRcV8tMDM-unsplash.jpg"
-              params="func=fit&w=400&h=400&bg_colour=f2f7fa"
+              params="func=fit&w=400&h=400&bg_colour=f2f7fa&ci_info=0"
             />
             <pre className="original-image-code-block">
               &lt;
               <strong className="code-yellow-color">Img</strong>
+              {' '}
               <span className="code-yellow-color">src</span>
               ="
               <strong className="code-blue-color">https://scaleflex.cloudimg.io/v7/demo/cloudimage-responsive-demo/shayna-douglas-VibRcV8tMDM-unsplash.jpg</strong>
               "
-              {'/>'}
+              {' />'}
               {' '}
             </pre>
           </div>
@@ -35,16 +36,17 @@ function Crop() {
             </p>
             <Img
               src="shayna-douglas-VibRcV8tMDM-unsplash.jpg"
-              params="func=crop&w=400&h=400"
+              params="func=crop&w=400&h=400&ci_info=0"
             />
             <pre className="original-image-code-block">
               &lt;
               <span className="code-yellow-color">Img</span>
+              {' '}
               <span className="code-yellow-color">src</span>
               ="
               <span className="code-blue-color">unsplash.jpg</span>
               "
-              <span className="code-yellow-color">ci-params</span>
+              <span className="code-yellow-color">params</span>
               ="func=crop&w=400&h=400"
               /&gt;
             </pre>
@@ -57,15 +59,16 @@ function Crop() {
             </p>
             <Img
               src="shayna-douglas-VibRcV8tMDM-unsplash.jpg"
-              params="w=400&h=400&func=crop&gravity=auto"
+              params="w=400&h=400&func=crop&gravity=auto&ci_info=0"
             />
             <pre className="original-image-code-block">
               <span className="code-yellow-color">&lt;Img</span>
+              {' '}
               <span className="code-yellow-color">src</span>
               ="
               <span className="code-blue-color">unsplash.jpg</span>
               "
-              <span className="code-yellow-color">ci-params</span>
+              <span className="code-yellow-color">params</span>
               ="func=crop&w=400&h=400&gravity=auto"
               /&gt;
             </pre>

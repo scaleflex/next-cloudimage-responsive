@@ -12,5 +12,13 @@ function Img(props) {
   );
 }
 
+function BackgroundImg(props) {
+  const config = useContext(CloudimageContext);
 
-export { Img };
+  return (
+    <Image background {...props} config={config} />
+  );
+}
+
+
+export { Img, BackgroundImg };

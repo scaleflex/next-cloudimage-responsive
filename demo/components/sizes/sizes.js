@@ -12,6 +12,7 @@ function Sizes() {
           >
             https://scaleflex.cloudimg.io/v7/demo/redcharlie.jpg,
           </a>
+          {' '}
           let's explore in the table below, what size and resolution will be loaded depending on the image's container.
         </p>
       </div>

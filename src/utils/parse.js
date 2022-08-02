@@ -1,3 +1,6 @@
+import { INFO_REGEX, WIDTH_PARAMS } from '../constants';
+
+
 const parseParams = (params) => {
   let _params = params;
   const isObject = !!params && typeof params === 'object';
@@ -21,15 +24,17 @@ const parseImageSrc = ({
   lowPreview,
 }) => {
   const isIncludesApiVersion = apiVersion && !doNotReplaceUrl;
+  const isIncludesWidthParam = WIDTH_PARAMS.some((widthParam) => src.includes(widthParam));
+  const _params = (lowPreview && params) ? params.replace(INFO_REGEX, '') : params;
 
   return [
     !doNotReplaceUrl && cName ? `https://${cName}` : '',
     isIncludesApiVersion ? `/${apiVersion}/` : '',
     src,
     src.includes('?') ? '&' : '?',
-    width ? `w=${width}&` : '',
+    width && !isIncludesWidthParam ? `w=${width}&` : '',
     lowPreview ? 'blur=80&' : '',
-    params || '',
+    _params || '',
   ].join('');
 };
 

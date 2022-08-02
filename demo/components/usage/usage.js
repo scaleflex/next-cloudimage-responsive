@@ -22,6 +22,7 @@ function Usage() {
           <span>
             Find out more about
             <strong>
+              {' '}
               <a
                 href="https://www.cloudimage.io/en/home"
                 target="_blank"

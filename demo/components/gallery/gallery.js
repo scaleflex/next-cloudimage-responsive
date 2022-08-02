@@ -1,7 +1,41 @@
-import { Img } from '../../src';
+import { useEffect, useRef, useState } from 'react';
+import { Img } from '../../../src';
 
 
 function Gallery() {
+  const [imagesWidth, setImagesWidth] = useState({
+    house: 0,
+    church: 0,
+    girl: 0,
+    clothes: 0,
+  });
+
+  const houseRef = useRef();
+  const churchRef = useRef();
+  const girlRef = useRef();
+  const clothesRef = useRef();
+
+  const updateSizes = () => {
+    if (houseRef.current) {
+      setImagesWidth({
+        ...imagesWidth,
+        house: houseRef.current.offsetWidth,
+        church: churchRef.current.offsetWidth,
+        girl: girlRef.current.offsetWidth,
+        clothes: clothesRef.current.offsetWidth,
+      });
+    }
+  };
+
+  useEffect(() => {
+    updateSizes();
+    window.addEventListener('resize', updateSizes);
+
+    return () => {
+      window.removeEventListener('resize', updateSizes);
+    };
+  }, []);
+
   return (
     <section className="demo-gallery">
       <div className="container-fluid">
@@ -14,15 +48,15 @@ function Gallery() {
           </p>
         </div>
         <div className="image-wrapper">
-          <div className="first-column-image">
+          <div ref={houseRef} className="first-column-image">
             <Img
               src="House+img.jpg"
-              id="left-column-image"
             />
             <div className="image-size-wrapper">
               <div className="text">
                 <span>
-                  <span id="left-column-image-size" />
+                  <span />
+                  {imagesWidth.house}
                   {' '}
                   px
                 </span>
@@ -31,33 +65,27 @@ function Gallery() {
           </div>
           <div className="right-column">
             <div className="square-with-circle-img">
-              <div className="second-column-image hide-in-mobile">
-                <Img
-                  src="Church+square+img.jpg"
-                  id="right-column-first-image"
-                />
+              <div ref={churchRef} className="second-column-image hide-in-mobile">
+                <Img src="Church+square+img.jpg" />
                 <div className="image-size-wrapper">
                   <p className="text">
                     <span>
-                      <span id="right-column-first-image-size" />
+                      <span />
+                      {imagesWidth.church}
                       {' '}
                       px
                     </span>
                   </p>
                 </div>
               </div>
-              <div className="circle-image-wrapper">
-                <Img
-                  className="ellipse-image"
-                  src="Girl+img.jpg"
-                  params="w=265&h=265&gravity=north"
-                  id="right-column-second-image"
-                />
+              <div ref={girlRef} className="circle-image-wrapper">
+                <Img src="Girl+img.jpg" params="w=265&h=265&gravity=north" />
                 <div className="circle-image-text-wrapper">
                   <div className="image-size-wrapper">
                     <p className="text">
                       <span>
-                        <span id="right-column-second-image-size" />
+                        <span />
+                        {imagesWidth.girl}
                         {' '}
                         px
                       </span>
@@ -66,15 +94,13 @@ function Gallery() {
                 </div>
               </div>
             </div>
-            <div className="horizontal-image">
-              <Img
-                id="first-horizontal-image"
-                src="Dresses+img.jpg"
-              />
+            <div ref={clothesRef} className="horizontal-image">
+              <Img src="Dresses+img.jpg" />
               <div className="image-size-wrapper">
                 <p className="text">
                   <span>
-                    <span id="first-horizontal-image-size" />
+                    <span />
+                    {imagesWidth.clothes}
                     {' '}
                     px
                   </span>
@@ -83,21 +109,7 @@ function Gallery() {
             </div>
           </div>
         </div>
-        <div className="mobile-screen-horizontal-image">
-          <Img
-            src="Dresses+img.jpg"
-            id="second-horizontal-image"
-          />
-          <div className="image-size-wrapper">
-            <p className="text">
-              <span>
-                <span id="second-horizontal-image-size" />
-                {' '}
-                px
-              </span>
-            </p>
-          </div>
-        </div>
+
       </div>
     </section>
   );

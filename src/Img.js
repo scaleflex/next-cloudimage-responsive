@@ -1,6 +1,6 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import { getImgSRC } from 'cloudimage-responsive-utils';
+import { getImgSRC, processReactNode } from 'cloudimage-responsive-utils';
 
 import { computeImageStyles, getWrapperClassname, computeImageSize } from './utils/compute';
 import { parseAlt, parseParams, parseImageSrc } from './utils/parse';
@@ -17,6 +17,7 @@ function Img(props) {
     doNotReplaceURL: imagesDoNotReplaceURL, baseURL, params: imagesParams,
     quality: imagesQuality, layout: imagesLayout, objectFit: imagesObjectFill,
     lowPreviewQuality: imagesLowPreviewQuality, transitionDuration: imagesTransitonDuration,
+    ssr: imagesSsr, objectPosition: imagesObjectPosition,
   } = config;
 
   const {
@@ -24,20 +25,23 @@ function Img(props) {
     layout = imagesLayout, objectFit = imagesObjectFill,
     lowPreviewQuality = imagesLowPreviewQuality, onload,
     width, height, doNotReplaceURL = imagesDoNotReplaceURL,
-    wrapperClassname, alt, transitionDuration = imagesTransitonDuration,
-    style = {},
+    className, alt, transitionDuration = imagesTransitonDuration,
+    style = {}, ssr = imagesSsr, children, background, objectPosition = imagesObjectPosition,
   } = props;
 
   const [loaded, setLoaded] = useState(false);
+  const [cloudImgSrc, setCloudImgSrc] = useState('');
+  const [cloudImgSrcSet, setCloudImgSrcSet] = useState('');
 
   const wrapperRef = useRef();
+
+  let previousWidth;
   const cName = customDomain ? domain : `${token}.${domain}`;
   const _params = parseParams(params);
+  const [_src] = getImgSRC(src, baseURL);
 
   const cloudimageLoader = (context, lowPreview) => {
-    const { src: imageSrc, width: imageWidth } = context;
-
-    const [_src] = getImgSRC(imageSrc, baseURL);
+    const { width: imageWidth } = context;
     const lowPreviewWidth = imageWidth / (100 / lowPreviewQuality);
 
     return parseImageSrc({
@@ -59,31 +63,106 @@ function Img(props) {
     }
   };
 
+  const processImage = (update, windowScreenBecomesBigger) => {
+    const _props = {
+      src,
+      width,
+      params,
+      doNotReplaceURL,
+      config,
+    };
+
+    const { cloudimgSRCSET, cloudimgURL } = processReactNode(
+      _props,
+      wrapperRef.current,
+      update,
+      windowScreenBecomesBigger,
+      false,
+    ) || {};
+
+    if (cloudimgSRCSET && cloudimgURL) {
+      const _srcSet = cloudimgSRCSET
+        .map(({ dpr, url }) => `${url} ${dpr}x`).join(', ');
+
+      setCloudImgSrc(cloudimgURL);
+      setCloudImgSrcSet(_srcSet);
+    }
+  };
+
+  const handleWindowResize = () => {
+    const windowInnerWidth = window.innerWidth;
+
+    if (previousWidth && previousWidth !== windowInnerWidth) {
+      processImage(
+        true,
+        windowInnerWidth > previousWidth,
+      );
+      previousWidth = windowInnerWidth;
+    }
+  };
+
+  const wrapperClassname = background
+    ? classes['ci-background-wrapper'] : classes[getWrapperClassname(layout)];
+
+  useEffect(() => {
+    if (ssr) return;
+
+    previousWidth = window.innerWidth;
+
+    processImage();
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  }, []);
+
   return (
     <div
       ref={wrapperRef}
       style={{ ...WRAPPER_STYLES, ...style }}
-      className={`${classes[getWrapperClassname(layout)]}${wrapperClassname ? `${wrapperClassname}` : ''}`}
+      className={`${wrapperClassname}${className ? ` ${className}` : ''}`}
     >
       <Image
         src={src}
         loader={(context) => cloudimageLoader(context, true)}
-        layout={layout}
+        layout="fill"
         priority
+        objectFit={objectFit}
+        objectPosition={objectPosition}
         alt={`low-preview-${alt || parseAlt(src)}`}
         {...computeImageSize(layout, width, height)}
       />
-      <Image
-        src={src}
-        layout={layout}
-        loader={cloudimageLoader}
-        quality={quality}
-        objectFit={objectFit}
-        style={computeImageStyles(loaded, transitionDuration)}
-        onLoad={onImageLoad}
-        alt={alt || parseAlt(src)}
-        {...computeImageSize(layout, width, height)}
-      />
+      {ssr ? (
+        <Image
+          src={src}
+          layout={layout}
+          loader={cloudimageLoader}
+          quality={quality}
+          objectFit={objectFit}
+          objectPosition={objectPosition}
+          style={computeImageStyles(loaded, transitionDuration)}
+          onLoad={onImageLoad}
+          alt={alt || parseAlt(src)}
+          {...computeImageSize(layout, width, height)}
+        />
+      ) : (
+        <img
+          src={cloudImgSrc}
+          srcSet={cloudImgSrcSet}
+          alt={alt || parseAlt(src)}
+          onLoad={onImageLoad}
+          style={computeImageStyles(loaded, transitionDuration, objectFit, objectPosition)}
+          className={classes['ci-ssg-image']}
+          loading="lazy"
+        />
+      )}
+
+      {background && (
+      <div className={classes['ci-background-content']}>
+        {children}
+      </div>
+      )}
     </div>
   );
 }

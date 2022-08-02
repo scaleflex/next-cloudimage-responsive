@@ -13,9 +13,12 @@ const DEFAULT_VALUES = {
   autoAlt: false,
   quality: 75,
   layout: 'responsive',
-  ObjectFit: 'fill',
+  objectFit: 'cover',
   lowPreviewQuality: 50,
   transitionDuration: '800ms',
+  objectPosition: 'center',
+  devicePixelRatioList: [1, 1.5, 2],
+  ssr: false,
 };
 
 const LAYOUTS = {
@@ -25,4 +28,10 @@ const LAYOUTS = {
   FIXED: 'fixed',
 };
 
-export { LAYOUTS, DEFAULT_VALUES };
+const WIDTH_PARAMS = ['w', 'width'];
+
+const INFO_REGEX = /&ci_info=\d|\?ci_info=\d|ci_info=\d/;
+
+export {
+  LAYOUTS, DEFAULT_VALUES, WIDTH_PARAMS, INFO_REGEX,
+};

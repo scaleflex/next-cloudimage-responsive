@@ -2,13 +2,15 @@ import { LAYOUTS } from '../constants';
 import { LOADED_IMAGE_STYLES } from '../styles.constants';
 
 
-const computeImageStyles = (loaded, transitionDuration) => ({
+const computeImageStyles = (loaded, transitionDuration, objectFit, objectPosition) => ({
   transitionTimingFunction: 'ease',
   willChange: 'opacity, transform',
   transitionDuration,
   transitionDelay: '100ms',
   transitionProperty: 'opacity, transform',
   opacity: 0,
+  objectFit,
+  objectPosition,
   ...(loaded ? LOADED_IMAGE_STYLES : {}),
 });
 
@@ -20,6 +22,10 @@ const getWrapperClassname = (layout) => {
 
     case LAYOUTS.RESPONSIVE: {
       return 'ci-responsive-image';
+    }
+
+    case LAYOUTS.INTRINSIC: {
+      return 'ci-intrinsic-image';
     }
 
     default: {

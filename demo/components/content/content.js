@@ -1,7 +1,24 @@
-import { Img } from '../../src';
+import { useEffect, useRef, useState } from 'react';
+import { Img } from '../../../src';
 
 
 function Content() {
+  const [mainImageWidth, setMainImageWidth] = useState(0);
+  const mainImageWrapper = useRef();
+
+  const getImageWidth = () => {
+    setMainImageWidth(mainImageWrapper.current.offsetWidth);
+  };
+
+  useEffect(() => {
+    setMainImageWidth(mainImageWrapper.current.offsetWidth);
+
+    window.addEventListener('resize', getImageWidth);
+    return () => {
+      window.removeEventListener('resize', getImageWidth);
+    };
+  }, []);
+
   return (
     <div className="content">
       <h1>
@@ -16,6 +33,7 @@ function Content() {
         <strong>resize, compress, and accelerate</strong>
         {' '}
         images across the world, on all devices.
+        {' '}
         <strong>Lazyload</strong>
         {' '}
         with fancy animation on image load? The plugin takes care of it.
@@ -38,18 +56,19 @@ function Content() {
           Edit in CodeSandbox
         </a>
       </div>
-      <div className="sea-coast container">
+      <div className="sea-coast container" ref={mainImageWrapper}>
         <Img
-          id="hero-section-image"
           params="ci_info=2"
           src="Main+image.jpg"
+          width={500}
+          height={500}
           alt="sea-coast"
         />
         <div className="image-size-wrapper">
           <p className="text">
             <span>
-              <span id="hero-section-image-size" />
-              {' '}
+              <span />
+              {mainImageWidth}
               px
             </span>
           </p>
