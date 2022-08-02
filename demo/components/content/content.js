@@ -41,7 +41,7 @@ function Content() {
       <div className="github-sandbox-buttons-wrapper">
         <a
           className="github-button transition-filled-button"
-          href="https://github.com/scaleflex/js-cloudimage-responsive"
+          href="https://github.com/scaleflex/next-cloudimage-responsive"
           target="_blank"
           rel="noreferrer"
         >

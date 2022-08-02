@@ -1000,7 +1000,7 @@ body {
 .footer .filerobot-accordion {
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .footer .accordion-content {
@@ -1342,7 +1342,7 @@ body {
   }
 
   .usage-section .usage-content p {
-   text-align: left;
+    text-align: left;
   }
 
   .demo-gallery {

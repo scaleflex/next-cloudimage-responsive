@@ -21,4 +21,5 @@ function BackgroundImg(props) {
 }
 
 
-export { Img, BackgroundImg };
+export default Img;
+export { CloudimageContext as CloudimageProvider, Img, BackgroundImg };

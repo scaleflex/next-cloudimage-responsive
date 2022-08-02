@@ -17,19 +17,19 @@ const computeImageStyles = (loaded, transitionDuration, objectFit, objectPositio
 const getWrapperClassname = (layout) => {
   switch (layout) {
     case LAYOUTS.FIXED: {
-      return 'ci-fixed-image';
+      return 'ciFixedImage';
     }
 
     case LAYOUTS.RESPONSIVE: {
-      return 'ci-responsive-image';
+      return 'ciResponsiveImage';
     }
 
     case LAYOUTS.INTRINSIC: {
-      return 'ci-intrinsic-image';
+      return 'ciIntrinsicImage';
     }
 
     default: {
-      return 'ci-fill-image';
+      return 'ciFillImage';
     }
   }
 };

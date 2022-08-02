@@ -1,36 +1,36 @@
-.ci-fill-image > span:nth-child(1),
-.ci-fill-image img:nth-child(1) {
+.ciFillImage > span:nth-child(1),
+.ciFillImage img:nth-child(1) {
   object-fit: contain;
   width: 100% !important;
   position: relative !important;
   height: unset !important;
 }
 
-.ci-responsive-image > span:nth-child(1),
-.ci-responsive-image img:nth-child(1) {
+.ciResponsiveImage > span:nth-child(1),
+.ciResponsiveImage img:nth-child(1) {
   width: 100% !important;
   position: absolute !important;
   height: unset !important;
 }
 
-.ci-fixed-image > span:nth-child(1),
-.ci-fixed-image img:nth-child(1) {
+.ciFixedImage > span:nth-child(1),
+.ciFixedImage img:nth-child(1) {
   position: absolute !important;
 }
 
-.ci-intrinsic-image > span:nth-child(1),
-.ci-intrinsic-image img:nth-child(1) {
+.ciIntrinsicImage > span:nth-child(1),
+.ciIntrinsicImage img:nth-child(1) {
   position: relative !important;
 }
 
-.ci-intrinsic-image > span:nth-child(2),
-.ci-intrinsic-image img:nth-child(2) {
+.ciIntrinsicImage > span:nth-child(2),
+.ciIntrinsicImage img:nth-child(2) {
   position: absolute !important;
   top: 0;
   left: 0;
 }
 
-.ci-ssg-image {
+.ciSsgImage {
   position: absolute;
   top: 0;
   left: 0;
@@ -38,12 +38,12 @@
   height: 100%;
 }
 
-.ci-background-wrapper {
+.ciBackgroundWrapper {
   position: relative;
   width: 100%;
 }
 
-.ci-background-wrapper > span:nth-child(1) img {
+.ciBackgroundWrapper > span:nth-child(1) img {
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
@@ -53,7 +53,7 @@
   height: 100% !important;
 }
 
-.ci-background-wrapper > span:nth-child(2) img {
+.ciBackgroundWrapper > span:nth-child(2) img {
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
@@ -63,7 +63,7 @@
   height: 100% !important;
 }
 
-.ci-background-content {
+.ciBackgroundContent {
   position: relative;
   z-index: 1;
 }

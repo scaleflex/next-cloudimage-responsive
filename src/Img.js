@@ -102,7 +102,7 @@ function Img(props) {
   };
 
   const wrapperClassname = background
-    ? classes['ci-background-wrapper'] : classes[getWrapperClassname(layout)];
+    ? classes.ciBackgroundWrapper : classes[getWrapperClassname(layout)];
 
   useEffect(() => {
     if (ssr) return;
@@ -153,13 +153,13 @@ function Img(props) {
           alt={alt || parseAlt(src)}
           onLoad={onImageLoad}
           style={computeImageStyles(loaded, transitionDuration, objectFit, objectPosition)}
-          className={classes['ci-ssg-image']}
+          className={classes.ciSsgImage}
           loading="lazy"
         />
       )}
 
       {background && (
-      <div className={classes['ci-background-content']}>
+      <div className={classes.ciBackgroundContent}>
         {children}
       </div>
       )}
