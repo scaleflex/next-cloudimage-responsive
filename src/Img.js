@@ -15,15 +15,15 @@ function Img(props) {
   const {
     customDomain, domain, token, apiVersion,
     doNotReplaceURL: imagesDoNotReplaceURL, baseURL, params: imagesParams,
-    quality: imagesQuality, layout: imagesLayout, objectFit: imagesObjectFill,
+    quality: imagesQuality, layout: imagesLayout, objectFit: imagesObjectFit,
     lowPreviewQuality: imagesLowPreviewQuality, transitionDuration: imagesTransitonDuration,
     ssr: imagesSsr, objectPosition: imagesObjectPosition,
   } = config;
 
   const {
     quality = imagesQuality, src, params = imagesParams,
-    layout = imagesLayout, objectFit = imagesObjectFill,
-    lowPreviewQuality = imagesLowPreviewQuality, onload,
+    layout = imagesLayout, objectFit = imagesObjectFit,
+    lowPreviewQuality = imagesLowPreviewQuality, onImgLoad,
     width, height, doNotReplaceURL = imagesDoNotReplaceURL,
     className, alt, transitionDuration = imagesTransitonDuration,
     style = {}, ssr = imagesSsr, children, background, objectPosition = imagesObjectPosition,
@@ -58,8 +58,8 @@ function Img(props) {
   const onImageLoad = (event) => {
     setLoaded(true);
 
-    if (typeof onload === 'function') {
-      onload(event);
+    if (typeof onImgLoad === 'function') {
+      onImgLoad(event);
     }
   };
 
