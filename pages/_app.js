@@ -9,8 +9,6 @@ function MyApp({ Component, pageProps }) {
     apiVersion: 'v7',
     doNotReplaceURL: true,
     params: { org_if_sml: 1, ci_info: 2 },
-    layout: 'fill',
-    ssr: true,
   };
 
   return (
