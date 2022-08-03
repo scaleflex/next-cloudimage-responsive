@@ -30,3 +30,7 @@ Types of changes:
 ## 1.0.0 - 2022-08-03
 ### Added
 - Init the plugin
+
+## 1.0.1 - 2022-08-03
+### Changed
+- Miniify the build

@@ -1,6 +1,6 @@
 {
   "name": "next-cloudimage-responsive",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "scripts": {
     "start": "next dev",
@@ -59,6 +59,7 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "rollup": "^2.77.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.32.1",
@@ -69,6 +70,7 @@
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "dependencies": {
-    "cloudimage-responsive-utils": "^2.4.9"
+    "cloudimage-responsive-utils": "^2.4.9",
+    "rollup-plugin-node-resolve": "^5.2.0"
   }
 }
