@@ -65,19 +65,20 @@ function Img(props) {
   };
 
   const processImage = (update, windowScreenBecomesBigger) => {
-    const _props = {
+    const options = {
       src,
       width,
       params,
       doNotReplaceURL,
-      config,
+      config: { ...config, params: undefined },
     };
 
     const { cloudimgSRCSET, cloudimgURL } = processReactNode(
-      _props,
+      options,
       wrapperRef.current,
       update,
       windowScreenBecomesBigger,
+      config,
       false,
     ) || {};
 

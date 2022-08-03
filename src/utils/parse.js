@@ -16,19 +16,19 @@ const parseParams = (params) => {
 
 const parseImageSrc = ({
   cName,
-  doNotReplaceUrl,
+  doNotReplaceURL,
   apiVersion,
   src,
   width,
   params,
   lowPreview,
 }) => {
-  const isIncludesApiVersion = apiVersion && !doNotReplaceUrl;
+  const isIncludesApiVersion = apiVersion && !doNotReplaceURL;
   const isIncludesWidthParam = WIDTH_PARAMS.some((widthParam) => src.includes(widthParam));
   const _params = (lowPreview && params) ? params.replace(INFO_REGEX, '') : params;
 
   return [
-    !doNotReplaceUrl && cName ? `https://${cName}` : '',
+    !doNotReplaceURL && cName ? `https://${cName}` : '',
     isIncludesApiVersion ? `/${apiVersion}/` : '',
     src,
     src.includes('?') ? '&' : '?',

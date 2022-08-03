@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import Head from 'next/head';
 import Header from '../demo/components/header';
 import Content from '../demo/components/content';
 import Usage from '../demo/components/usage';
@@ -15,17 +16,22 @@ export default function Home() {
   const footerRef = useRef();
 
   return (
-    <section className="content-wrapper">
-      <Header />
-      <Content />
-      <Usage />
-      <Gallery />
-      <Crop />
-      <BackgroundSection />
-      <Sizes />
-      <Questions />
-      <ScreenInfo footerRef={footerRef} />
-      <Footer footerRef={footerRef} />
-    </section>
+    <>
+      <Head>
+        <title>Next Cloudimage Responsive</title>
+      </Head>
+      <section className="content-wrapper">
+        <Header />
+        <Content />
+        <Usage />
+        <Gallery />
+        <Crop />
+        <BackgroundSection />
+        <Sizes />
+        <Questions />
+        <ScreenInfo footerRef={footerRef} />
+        <Footer footerRef={footerRef} />
+      </section>
+    </>
   );
 }
