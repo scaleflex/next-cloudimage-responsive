@@ -27,6 +27,10 @@ Types of changes:
 -------------
 
 -------------
+## 1.0.3 - 2022-08-03
+### Fixed
+- Images parameters
+
 ## 1.0.2 - 2022-08-03
 ### Changed
 - Documentation
