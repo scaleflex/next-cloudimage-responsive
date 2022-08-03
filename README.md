@@ -26,7 +26,7 @@
 		•
 		<a href="https://scaleflex.github.io/next-cloudimage-responsive/" target="_blank">Demo</a>
 		•
-		<a href="https://codesandbox.io/s/react-cloudimage-responsive-example-re0y6m" target="_blank">Code Sandbox</a>
+		<a href="https://codesandbox.io/s/next-cloudimage-responsive-example-srp27e" target="_blank">Code Sandbox</a>
 		•
 		<a href="https://medium.com/@dmitry_82269/responsive-images-in-2019-now-easier-than-ever-b76e5a43c074" target="_blank">Why?</a>
 	</strong>
@@ -166,7 +166,7 @@ import { Img } from 'next-cloudimage-responsive';
 
 <Img src="img.jpg" alt="Demo image"/>
 ```
-<a href="https://codesandbox.io/s/react-cloudimage-responsive-example-9e9rb5"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="edit in codesandbox"/></a>
+<a href="https://codesandbox.io/s/next-cloudimage-responsive-example-srp27e"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="edit in codesandbox"/></a>
 
 ### BackgroundImg component:
 
@@ -178,7 +178,7 @@ import { BackgroundImg } from 'next-cloudimage-responsive';
 </BackgroundImg>
 ```
 
-<a href="https://codesandbox.io/s/react-cloudimage-responsive-example-fseygn"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="edeit in codesandbox"/></a>
+<a href="https://codesandbox.io/s/next-cloudimage-responsive-example-div5l6"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="edeit in codesandbox"/></a>
 
 ## <a name="configuration"></a> Config
 
@@ -294,6 +294,8 @@ List of supported device pixel ratios. If there is no need to support retina dev
 Render both low-quality preview and the optimized image on the server.
 if **ssr** set to true we can't detect the image container width or the device pixel ratio. so the plugin will generate a srcset relative to <a href="https://nextjs.org/docs/api-reference/next/image#device-sizes">device sizes</a> in next.config.js
 
+<a href="https://codesandbox.io/s/next-cloudimage-responsive-example-8r07pm"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="edit in codesandbox"/></a>
+
 ### <a name="low_preview_quality"></a> lowPreviewQuality
 
 ###### Type: **Number** | Default: **50**
@@ -406,4 +408,4 @@ All contributions are super welcome!
 
 
 ## <a name="license"></a>License
-React Cloudimage Responsive is provided under the [MIT License](https://opensource.org/licenses/MIT).
+Next Cloudimage Responsive is provided under the [MIT License](https://opensource.org/licenses/MIT).

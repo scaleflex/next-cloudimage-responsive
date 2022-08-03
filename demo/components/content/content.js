@@ -49,7 +49,7 @@ function Content() {
         </a>
         <a
           className="code-sand-box-button"
-          href="https://codesandbox.io/s/js-cloudimage-responsive-example-zc1ekf"
+          href="https://codesandbox.io/s/next-cloudimage-responsive-example-srp27e"
           target="_blank"
           rel="noreferrer"
         >
