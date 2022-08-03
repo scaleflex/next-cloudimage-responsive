@@ -1,6 +1,6 @@
 {
   "name": "next-cloudimage-responsive",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0",
   "private": false,
   "scripts": {
     "start": "next dev",
@@ -9,13 +9,40 @@
     "deploy": "gh-pages -d out -t true"
   },
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "description": "Cloudimage Responsive will smartly resize, compress and accelerate images across the World in your site for all devices. The plugin supports lazy loading technique with fancy animation on image load.",
+  "author": "scaleflex",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/scaleflex/next-cloudimage-responsive"
+  },
+  "homepage": "https://github.com/scaleflex/next-cloudimage-responsive#readme",
+  "keywords": [
+    "next",
+    "react",
+    "image",
+    "images",
+    "cloudimage",
+    "responsive images",
+    "lazy loading",
+    "web acceleration",
+    "image management",
+    "image resizing",
+    "image compression",
+    "image optimization",
+    "image CDN",
+    "image CDN",
+    "webp",
+    "jpeg xr",
+    "jpg optimization",
+    "image resizing and CDN",
+    "crop",
+    "resize"
+  ],
   "type": "module",
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "devDependencies": {
     "@babel/core": "^7.18.10",
-    "@modular-css/rollup": "^28.2.2",
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-node-resolve": "^13.3.0",
@@ -27,9 +54,14 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "gh-pages": "^4.0.0",
     "next": "^12.1.6",
+    "postcss-scss": "^4.0.4",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "rollup": "^2.77.2"
+    "rollup": "^2.77.2",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.32.1",
+    "typescript": "^4.7.4"
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",

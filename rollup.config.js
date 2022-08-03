@@ -3,9 +3,12 @@ import { babel } from '@rollup/plugin-babel';
 
 
 import commonjs from '@rollup/plugin-commonjs';
-import css from '@modular-css/rollup';
+import postcss from 'rollup-plugin-postcss';
+import { terser } from 'rollup-plugin-terser';
 
+import typescript from 'rollup-plugin-typescript2';
 import pkg from './package.json';
+import { generateScopedName } from './rollup.utils';
 
 
 export default {
@@ -24,8 +27,16 @@ export default {
       babelHelpers: 'runtime',
       presets: ['next/babel'],
     }),
+    postcss({
+      extract: false,
+      minimize: true,
+      modules: {
+        generateScopedName,
+      },
+    }),
     commonjs(),
-    css(),
+    typescript(),
+    terser(),
   ],
   external: ['react', 'react-dom'],
 };
