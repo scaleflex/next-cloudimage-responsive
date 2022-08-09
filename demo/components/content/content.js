@@ -62,7 +62,6 @@ function Content() {
           src="Main+image.jpg"
           width={500}
           height={500}
-          alt="sea-coast"
         />
         <div className="image-size-wrapper">
           <p className="text">

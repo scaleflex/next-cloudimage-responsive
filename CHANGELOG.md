@@ -27,6 +27,10 @@ Types of changes:
 -------------
 
 -------------
+## 1.1.0 - 2022-08-09
+### Added
+- Possibility to generate image alt if missing
+
 ## 1.0.3 - 2022-08-03
 ### Fixed
 - Images parameters

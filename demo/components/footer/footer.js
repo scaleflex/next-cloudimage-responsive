@@ -135,7 +135,7 @@ function Footer({ footerRef }) {
       </div>
       <div className="footer-wrapper">
         <div className="footer-info">
-          <h4>Info</h4>
+          <p>Info</p>
           <div className="footer-info-content">
             <a
               href="https://github.com/scaleflex/next-cloudimage-responsive"

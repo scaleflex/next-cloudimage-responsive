@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import { getImgSRC, processReactNode } from 'cloudimage-responsive-utils';
+import { getImgSRC, processReactNode, generateAlt } from 'cloudimage-responsive-utils';
 
 import { computeImageStyles, getWrapperClassname, computeImageSize } from './utils/compute';
-import { parseAlt, parseParams, parseImageSrc } from './utils/parse';
+import { parseParams, parseImageSrc } from './utils/parse';
 import { WRAPPER_STYLES } from './styles.constants';
 
 import classes from './normalize.styles.module.css';
@@ -40,6 +40,7 @@ function Img(props) {
   const cName = customDomain ? domain : `${token}.${domain}`;
   const _params = parseParams(params);
   const [_src] = getImgSRC(src, baseURL);
+  const _alt = alt || generateAlt(src);
 
   const cloudimageLoader = (context, lowPreview) => {
     const { width: imageWidth } = context;
@@ -132,7 +133,7 @@ function Img(props) {
         priority
         objectFit={objectFit}
         objectPosition={objectPosition}
-        alt={`low-preview-${alt || parseAlt(src)}`}
+        alt={`low-preview-${_alt}`}
         {...computeImageSize(layout, width, height)}
       />
 
@@ -147,14 +148,14 @@ function Img(props) {
           style={computeImageStyles(loaded, transitionDuration)}
           onLoad={onImageLoad}
           loading={lazyload ? 'lazy' : 'eager'}
-          alt={alt || parseAlt(src)}
+          alt={_alt}
           {...computeImageSize(layout, width, height)}
         />
       ) : (
         <img
           src={cloudImgSrc}
           srcSet={cloudImgSrcSet}
-          alt={alt || parseAlt(src)}
+          alt={_alt}
           onLoad={onImageLoad}
           style={computeImageStyles(loaded, transitionDuration, objectFit, objectPosition)}
           className={classes.ciSsgImage}

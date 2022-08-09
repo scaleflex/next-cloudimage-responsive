@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: "Inter";
+  font-family: 'Inter', sans-serif;
   overflow-x: hidden;
 }
 
@@ -468,7 +468,6 @@ body {
   font-size: 14px;
   line-height: 17px;
   font-weight: 400;
-  font-family: "Inter";
   color: #4d5c74;
   overflow-x: scroll;
   margin-top: 24px;
@@ -532,7 +531,6 @@ body {
   color: #ffff;
   font-weight: 600;
   padding: 28px 0 27px 18%;
-  font-family: "Inter";
 }
 
 .background-images-section .images-code-wrapper .copy-wrapper {
@@ -756,7 +754,6 @@ body {
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
-  font-family: "Inter";
   margin-top: 16px;
   border-radius: 4px;
   cursor: pointer;
@@ -778,7 +775,6 @@ body {
   line-height: 32px;
   font-weight: 400;
   color: #2e3b49;
-  font-family: "Inter";
   width: 17.7%;
   min-width: 64px;
   height: 40px;
@@ -826,7 +822,6 @@ body {
   font-size: 14px;
   line-height: 21px;
   color: #4d5c74;
-  font-family: "Inter";
   overflow: scroll;
   max-height: 306.79px;
 }
@@ -1113,7 +1108,7 @@ body {
   flex-direction: column;
 }
 
-.footer .footer-info h4 {
+.footer .footer-info p {
   margin-bottom: 24px;
   font-weight: 600;
   font-size: 18px;

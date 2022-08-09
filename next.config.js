@@ -9,6 +9,7 @@ const nextConfig = {
     assetPrefix: '/next-cloudimage-responsive/',
     basePath: '/next-cloudimage-responsive',
   } : {}),
+  productionBrowserSourceMaps: true,
 };
 
 export default nextConfig;

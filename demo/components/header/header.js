@@ -28,6 +28,8 @@ function Header() {
         >
           <img
             className="github-icons"
+            width={20}
+            height={17}
             src="https://scaleflex.cloudimg.io/v7/assets/cloudimage-responsive-assets/github-icon.svg"
             alt="github-icon"
           />
