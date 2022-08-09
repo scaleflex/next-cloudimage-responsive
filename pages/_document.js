@@ -8,7 +8,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <link
-          rel="icon"
+          rel="shortcut icon"
           type="image/png"
           href="/favicon.webp"
         />
