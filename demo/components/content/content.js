@@ -65,11 +65,8 @@ function Content() {
         />
         <div className="image-size-wrapper">
           <p className="text">
-            <span>
-              <span />
-              {mainImageWidth}
-              px
-            </span>
+            {mainImageWidth || '000'}
+            px
           </p>
         </div>
         <div className="green-blur-circle hide-in-mobile" />

@@ -54,12 +54,9 @@ function Gallery() {
             />
             <div className="image-size-wrapper">
               <div className="text">
-                <span>
-                  <span />
-                  {imagesWidth.house}
-                  {' '}
-                  px
-                </span>
+                {imagesWidth.house || '000'}
+                {' '}
+                px
               </div>
             </div>
           </div>
@@ -69,12 +66,9 @@ function Gallery() {
                 <Img src="Church+square+img.jpg" />
                 <div className="image-size-wrapper">
                   <p className="text">
-                    <span>
-                      <span />
-                      {imagesWidth.church}
-                      {' '}
-                      px
-                    </span>
+                    {imagesWidth.church || '000'}
+                    {' '}
+                    px
                   </p>
                 </div>
               </div>
@@ -83,12 +77,9 @@ function Gallery() {
                 <div className="circle-image-text-wrapper">
                   <div className="image-size-wrapper">
                     <p className="text">
-                      <span>
-                        <span />
-                        {imagesWidth.girl}
-                        {' '}
-                        px
-                      </span>
+                      {imagesWidth.girl || '000'}
+                      {' '}
+                      px
                     </p>
                   </div>
                 </div>
@@ -98,12 +89,9 @@ function Gallery() {
               <Img src="Dresses+img.jpg" />
               <div className="image-size-wrapper">
                 <p className="text">
-                  <span>
-                    <span />
-                    {imagesWidth.clothes}
-                    {' '}
-                    px
-                  </span>
+                  {imagesWidth.clothes || '000'}
+                  {' '}
+                  px
                 </p>
               </div>
             </div>
