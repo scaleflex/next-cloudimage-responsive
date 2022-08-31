@@ -125,12 +125,12 @@ CDN traffic per month for free.
 using npm
 
 ```
-$ npm install --save next-cloudimage-responsive
+$ npm install next-cloudimage-responsive
 ```
 using yarn
 
 ```
-$ yard add next-cloudimage-responsive --dev
+$ yarn add next-cloudimage-responsive
 ```
 
 ## <a name="initialize"></a>Step 2: Initialize
