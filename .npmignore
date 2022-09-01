@@ -11,3 +11,8 @@ build
 .idea
 .next
 .github
+next-env.d.ts
+next.config.js
+rollup.config.js
+rollup.utils.js
+.eslintrc.json
