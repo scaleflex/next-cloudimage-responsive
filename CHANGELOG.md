@@ -27,6 +27,10 @@ Types of changes:
 -------------
 
 -------------
+## 1.2.0 - 2022-09-01
+### Changed
+- Decrease the package size
+
 ## 1.1.0 - 2022-08-09
 ### Added
 - Possibility to generate image alt if missing
