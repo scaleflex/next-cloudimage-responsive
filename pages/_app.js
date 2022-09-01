@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import CloudimageProvider from '../src/provider';
 import './main.css';
 

@@ -6,11 +6,19 @@ import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
 import { terser } from 'rollup-plugin-terser';
 import resolve from '@rollup/plugin-node-resolve';
-import typescript from 'rollup-plugin-typescript2';
 
 import pkg from './package.json';
 import { generateScopedName } from './rollup.utils';
 
+
+const banner = `/*
+ * vue-cloudimage-responsive-plain v${pkg.version}
+ *
+ * @license
+ * Copyright 2022, Scaleflex
+ * Released under the MIT License
+ */
+`;
 
 export default {
   input: 'src/index.js',
@@ -19,8 +27,9 @@ export default {
       file: pkg.main,
       format: 'es',
       exports: 'named',
-      sourcemap: true,
+      sourcemap: false,
       strict: true,
+      banner,
     },
   ],
   plugins: [
@@ -38,8 +47,11 @@ export default {
       },
     }),
     commonjs(),
-    typescript(),
     terser(),
   ],
-  external: ['react', 'react-dom'],
+  external: [
+    'react',
+    'react-dom',
+    'cloudimage-responsive-utils',
+  ],
 };
