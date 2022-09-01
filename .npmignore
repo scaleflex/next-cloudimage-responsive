@@ -1,0 +1,13 @@
+# .npmignore
+src
+out
+pages
+public
+demo
+static
+build
+.babelrc
+.gitignore
+.idea
+.next
+.github
