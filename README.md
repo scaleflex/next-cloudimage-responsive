@@ -139,7 +139,7 @@ After installing the next-cloudimage-responsive lib, simply initialize it with y
 of your image storage with **CloudimageProvider** and wrap your application with **CloudimageProvider**:
 
 ```jsx
-import CloudimageProvider from ' next-cloudimage-responsive';
+import { CloudimageProvider } from ' next-cloudimage-responsive';
 
 function MyApp({ Component, pageProps }) {
   const cloudimageConfig = {
