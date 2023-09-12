@@ -37,7 +37,7 @@ function Img(props) {
   const wrapperRef = useRef();
 
   let previousWidth;
-  const cName = customDomain ? domain : `${token}.${domain}`;
+  const cName = customDomain ? domain : `${token}.${domain}/`;
   const _params = parseParams(params);
   const [_src] = getImgSRC(src, baseURL);
   const _alt = alt || generateAlt(src);
