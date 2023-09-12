@@ -4,10 +4,10 @@ import './main.css';
 
 function MyApp({ Component, pageProps }) {
   const cloudimageConfig = {
-    token: 'demo',
-    baseURL: 'https://scaleflex.cloudimg.io/v7/demo/cloudimage-responsive-demo/',
+    token: 'scaleflex',
+    baseURL: 'demo/cloudimage-responsive-demo/',
     apiVersion: 'v7',
-    doNotReplaceURL: true,
+    doNotReplaceURL: false,
     params: { org_if_sml: 1, ci_info: 2 },
   };
 
