@@ -27,6 +27,10 @@ Types of changes:
 -------------
 
 -------------
+## 1.2.2 - 2023-09-12
+### Fixed
+- Low preview image baseURL
+
 ## 1.2.1 - 2022-09-01
 ### Changed
 - Decrease the package size
