@@ -28,8 +28,9 @@ const parseImageSrc = ({
   const _params = (lowPreview && params) ? params.replace(INFO_REGEX, '') : params;
 
   return [
-    !doNotReplaceURL && cName ? `https://${cName}` : '',
+    (!doNotReplaceURL && cName) ? `https://${cName}` : '',
     isIncludesApiVersion ? `/${apiVersion}/` : '',
+    (doNotReplaceURL || src.startsWith('/')) ? '' : '/',
     src,
     src.includes('?') ? '&' : '?',
     width && !isIncludesWidthParam ? `w=${width}&` : '',
