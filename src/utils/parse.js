@@ -14,6 +14,17 @@ const parseParams = (params) => {
   return _params;
 };
 
+const injectToUrl = (entryUrl, path, skipEndSlash = false) => {
+  if (entryUrl.endsWith('/')) return `${entryUrl}${path}`;
+
+  if (!entryUrl) return path;
+
+  if (skipEndSlash) return `${entryUrl}/${path}`;
+
+  return `${entryUrl}/${path}/`;
+};
+
+
 const parseImageSrc = ({
   cName,
   doNotReplaceURL,
@@ -23,16 +34,22 @@ const parseImageSrc = ({
   params,
   lowPreview,
 }) => {
-  const isIncludesApiVersion = apiVersion && !doNotReplaceURL;
+  const allowApiVersion = apiVersion && !doNotReplaceURL;
   const isIncludesWidthParam = WIDTH_PARAMS.some((widthParam) => src.includes(widthParam));
   const _params = (lowPreview && params) ? params.replace(INFO_REGEX, '') : params;
 
+  let mainUrl = (!doNotReplaceURL && cName) ? `https://${cName}` : '';
+
+
+  if (allowApiVersion) {
+    mainUrl = injectToUrl(mainUrl, apiVersion);
+  }
+
+  mainUrl = injectToUrl(mainUrl, src, true);
+
   return [
-    (!doNotReplaceURL && cName) ? `https://${cName}` : '',
-    isIncludesApiVersion ? `/${apiVersion}/` : '',
-    (doNotReplaceURL || src.startsWith('/')) ? '' : '/',
-    src,
-    src.includes('?') ? '&' : '?',
+    mainUrl,
+    mainUrl.includes('?') ? '&' : '?',
     width && !isIncludesWidthParam ? `w=${width}&` : '',
     lowPreview ? 'blur=80&' : '',
     _params || '',

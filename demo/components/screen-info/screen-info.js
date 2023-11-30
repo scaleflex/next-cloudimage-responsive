@@ -46,7 +46,7 @@ function ScreenInfo({ footerRef }) {
       <div className="label">
         Your device pixel ratio:
         <div className="window-width-box">
-          <span>{dpr}</span>
+          <span>{dpr.toFixed(2)}</span>
         </div>
       </div>
       <div className="label">

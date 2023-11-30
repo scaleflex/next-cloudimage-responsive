@@ -27,6 +27,10 @@ Types of changes:
 -------------
 
 -------------
+## 1.2.3 - 2023-11-30
+### Fixed
+- base URL issue adding extra slash
+
 ## 1.2.2 - 2023-09-12
 ### Fixed
 - Low preview image baseURL

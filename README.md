@@ -201,7 +201,7 @@ Note: this will disregard your token above as this should be built into the CNAM
 
 ### baseURL
 
-###### Type: **String** | Default: **"/"** | _optional_
+###### Type: **String** | Default: **""** | _optional_
 
 Your image folder on server, this alows to shorten your origin image URLs.
 
