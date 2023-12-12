@@ -2,14 +2,14 @@
 .ciFillImage img:nth-child(1) {
   width: 100% !important;
   position: relative !important;
-  height: unset !important;
+  height: 100% !important;
 }
 
 .ciResponsiveImage > span:nth-child(1),
 .ciResponsiveImage img:nth-child(1) {
   width: 100% !important;
   position: absolute !important;
-  height: unset !important;
+  height: 100% !important;
 }
 
 .ciFixedImage > span:nth-child(1),

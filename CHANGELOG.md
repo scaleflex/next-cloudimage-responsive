@@ -27,6 +27,10 @@ Types of changes:
 -------------
 
 -------------
+## 1.2.4 - 2023-11-30
+### Fixed
+- Issues with low preview size
+
 ## 1.2.3 - 2023-11-30
 ### Fixed
 - base URL issue adding extra slash
