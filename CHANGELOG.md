@@ -27,6 +27,10 @@ Types of changes:
 -------------
 
 -------------
+## 1.2.5 - 2024-04-30
+### Fixed
+- Change image src doesn't request re-render
+
 ## 1.2.4 - 2023-11-30
 ### Fixed
 - Issues with low preview size
