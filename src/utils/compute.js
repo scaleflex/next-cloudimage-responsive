@@ -2,19 +2,18 @@ import { LAYOUTS } from '../constants';
 import { LOADED_IMAGE_STYLES } from '../styles.constants';
 
 
-const computeImageStyles = (loaded, transitionDuration, objectFit, objectPosition) => ({
-  transitionTimingFunction: 'ease',
-  willChange: 'opacity, transform',
+const computeImageStyles = (loaded, transitionDuration, objectFit, objectPosition, transitionEnabled) => ({
+  transitionTimingFunction: 'ease-out',
   transitionDuration,
-  transitionDelay: '100ms',
-  transitionProperty: 'opacity, transform',
+  transitionProperty: transitionEnabled ? 'opacity, transform' : 'none',
+  transitionDelay: transitionEnabled ? '100ms' : 0,
   opacity: 0,
   ...(objectFit ? { objectFit } : {}),
   ...(objectPosition ? { objectPosition } : {}),
   ...(loaded ? LOADED_IMAGE_STYLES : {}),
 });
 
-const getWrapperClassname = (layout) => {
+const getWrapperClassName = (layout) => {
   switch (layout) {
     case LAYOUTS.FIXED: {
       return 'ciFixedImage';
@@ -47,6 +46,6 @@ const computeImageSize = (layout, width, height) => {
 
 export {
   computeImageStyles,
-  getWrapperClassname,
+  getWrapperClassName,
   computeImageSize,
 };
