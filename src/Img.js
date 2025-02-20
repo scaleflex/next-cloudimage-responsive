@@ -17,7 +17,7 @@ function Img(props) {
     doNotReplaceURL: imagesDoNotReplaceURL, baseURL, params: imagesParams,
     quality: imagesQuality, layout: imagesLayout, objectFit: imagesObjectFit,
     lowPreviewQuality: imagesLowPreviewQuality, transitionDuration: imagesTransitionDuration,
-    ssr: imagesSsr, objectPosition: imagesObjectPosition, lazyload: imagesLazyload,
+    ssr: imagesSsr, objectPosition: imagesObjectPosition, lazyload: imagesLazyload, renderBlurImage: imagesRenderBlurImage = true,
   } = config;
 
   const {
@@ -27,7 +27,7 @@ function Img(props) {
     width, height, doNotReplaceURL = imagesDoNotReplaceURL,
     className, alt, transitionDuration = imagesTransitionDuration,
     style = {}, ssr = imagesSsr, children, background, objectPosition = imagesObjectPosition,
-    lazyload = imagesLazyload,
+    lazyload = imagesLazyload, renderBlurImage = imagesRenderBlurImage,
   } = props;
 
   const [loaded, setLoaded] = useState(false);
@@ -131,16 +131,18 @@ function Img(props) {
       style={{ ...WRAPPER_STYLES, ...style }}
       className={`${wrapperClassName}${className ? ` ${className}` : ''}`}
     >
-      <Image
-        src={src}
-        loader={(context) => cloudimageLoader(context, true)}
-        layout="fill"
-        priority
-        objectFit={objectFit}
-        objectPosition={objectPosition}
-        alt={`low-preview-${_alt}`}
-        {...computeImageSize(layout, width, height)}
-      />
+      {renderBlurImage ? (
+        <Image
+          src={src}
+          loader={(context) => cloudimageLoader(context, true)}
+          layout="fill"
+          priority
+          objectFit={objectFit}
+          objectPosition={objectPosition}
+          alt={`low-preview-${_alt}`}
+          {...computeImageSize(layout, width, height)}
+        />
+      ) : null}
 
       {ssr ? (
         <Image
