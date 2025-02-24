@@ -27,6 +27,11 @@ Types of changes:
 -------------
 
 -------------
+
+## 1.2.6 - 2025-02-20
+### Added
+- Prop to render blur image optionally
+
 ## 1.2.5 - 2024-04-30
 ### Fixed
 - Change image src doesn't request re-render
