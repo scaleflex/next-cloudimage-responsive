@@ -17,7 +17,8 @@ function Img(props) {
     doNotReplaceURL: imagesDoNotReplaceURL, baseURL, params: imagesParams,
     quality: imagesQuality, layout: imagesLayout, objectFit: imagesObjectFit,
     lowPreviewQuality: imagesLowPreviewQuality, transitionDuration: imagesTransitionDuration,
-    ssr: imagesSsr, objectPosition: imagesObjectPosition, lazyload: imagesLazyload, renderBlurImage: imagesRenderBlurImage = true,
+    ssr: imagesSsr, objectPosition: imagesObjectPosition, lazyload: imagesLazyload,
+    renderBlurImage: imagesRenderBlurImage = true,
   } = config;
 
   const {
@@ -131,7 +132,7 @@ function Img(props) {
       style={{ ...WRAPPER_STYLES, ...style }}
       className={`${wrapperClassName}${className ? ` ${className}` : ''}`}
     >
-      {renderBlurImage ? (
+      {renderBlurImage && (
         <Image
           src={src}
           loader={(context) => cloudimageLoader(context, true)}
@@ -142,7 +143,7 @@ function Img(props) {
           alt={`low-preview-${_alt}`}
           {...computeImageSize(layout, width, height)}
         />
-      ) : null}
+      )}
 
       {ssr ? (
         <Image

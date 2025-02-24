@@ -28,9 +28,9 @@ Types of changes:
 
 -------------
 
-## 1.2.6 - 2025-02-20
+## 1.2.6 - 2025-02-24
 ### Added
-- Prop to render blur image optionally
+- Add support for `renderBlurImage` prop to render low-quality blur image optionally.
 
 ## 1.2.5 - 2024-04-30
 ### Fixed

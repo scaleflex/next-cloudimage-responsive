@@ -281,6 +281,13 @@ For example:
 
 List of supported device pixel ratios. If there is no need to support retina devices, you should set an empty array `devicePixelRatioList: []`.
 
+### renderBlurImage
+
+###### Type: **Boolean** | Default: **true**
+
+That can be used to decide whether the low-quality blur images needs to be rendered or no.
+
+
 ## <a name="server_side_config"></a> server-side config
 ### <a name="server-side"></a> ssr
 
