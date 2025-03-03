@@ -383,7 +383,7 @@ A function to be executed after the image is loaded
 
 ###### Type: **function ({ event, setLoaded }) {}** | Default: **undefined**
 
-A function to be executed after the image is loaded
+A function to be executed if the image is failed to load.
 
 ```jsx
 <Img
