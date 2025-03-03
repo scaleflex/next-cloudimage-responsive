@@ -27,6 +27,9 @@ Types of changes:
 -------------
 
 -------------
+## 1.2.7 - 2025-03-03
+### Added
+- Add support for `onImgLoadError` prop to be triggered in-case of image load failed.
 
 ## 1.2.6 - 2025-02-24
 ### Added

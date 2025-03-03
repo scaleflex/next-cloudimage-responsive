@@ -1,6 +1,6 @@
 {
   "name": "next-cloudimage-responsive",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "private": false,
   "scripts": {
     "start": "next dev",
