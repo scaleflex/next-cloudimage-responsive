@@ -378,6 +378,22 @@ A function to be executed after the image is loaded
   src="dino-reichmuth-1.jpg"
   onImgLoad={(event)=>{ console.log(event); }}/>
 ```
+
+### onImgLoadError
+
+###### Type: **function ({ event, setLoaded }) {}** | Default: **undefined**
+
+A function to be executed after the image is loaded
+
+```jsx
+<Img
+  src="dino-reichmuth-1.jpg"
+  onImgLoadError={({ event, setLoaded })=>{
+    setLoaded(true) // declares whether the image is loaded or not, if `true` - loaded - then assign the proper styles otherwise no need for the loaded styles (useful in-case u added a new src for the image throguh the fallback and want to apply the styles), by default setLoaded(false) is triggered in-case of failure.
+    console.log(event);
+  }} />
+```
+
 ### width
 
 ###### Type: **String** (e.g. 300px, 20vw) | Default: **undefined**

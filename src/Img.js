@@ -24,7 +24,7 @@ function Img(props) {
   const {
     quality = imagesQuality, src, params = imagesParams,
     layout = imagesLayout, objectFit = imagesObjectFit,
-    lowPreviewQuality = imagesLowPreviewQuality, onImgLoad,
+    lowPreviewQuality = imagesLowPreviewQuality, onImgLoad, onImgLoadError,
     width, height, doNotReplaceURL = imagesDoNotReplaceURL,
     className, alt, transitionDuration = imagesTransitionDuration,
     style = {}, ssr = imagesSsr, children, background, objectPosition = imagesObjectPosition,
@@ -67,6 +67,14 @@ function Img(props) {
       onImgLoad(event);
     }
   };
+
+  const onImageLoadError = (event) => {
+    setLoaded(false)
+
+    if (typeof onImgLoadError === 'function') {
+      onImgLoadError({ event, setLoaded });
+    }
+  }
 
   const processImage = (update, windowScreenBecomesBigger) => {
     const options = {
@@ -157,6 +165,7 @@ function Img(props) {
           onLoad={onImageLoad}
           loading={lazyload ? 'lazy' : 'eager'}
           alt={_alt}
+          onError={onImageLoadError}
           {...computeImageSize(layout, width, height)}
         />
       ) : (
@@ -168,6 +177,7 @@ function Img(props) {
           style={computeImageStyles(loaded, transitionDuration, objectFit, objectPosition, !previousSrc.current)}
           className={classes.ciSsgImage}
           loading={lazyload ? 'lazy' : 'eager'}
+          onError={onImageLoadError}
         />
       )}
 
