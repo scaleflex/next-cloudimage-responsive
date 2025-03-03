@@ -69,12 +69,12 @@ function Img(props) {
   };
 
   const onImageLoadError = (event) => {
-    setLoaded(false)
+    setLoaded(false);
 
     if (typeof onImgLoadError === 'function') {
       onImgLoadError({ event, setLoaded });
     }
-  }
+  };
 
   const processImage = (update, windowScreenBecomesBigger) => {
     const options = {
