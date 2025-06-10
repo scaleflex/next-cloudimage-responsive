@@ -230,11 +230,11 @@ const cloudimageConfig = {
 
 If set to **true** the plugin will only add query params to the given source of image.
 
-### <a name="lazy_loading_config"></a>lazyLoading
+### <a name="lazy_loading_config"></a>lazyload
 
 ###### Type: **Bool** | Default: **true** | _optional_
 
-Only images close to the client's viewport will be loaded, hence accelerating the page loading time. The plugin uses
+Only images close to the client's viewport will be loaded, hence accelerating the page loading time.
 
 ### <a name="params"></a> params
 
@@ -344,7 +344,7 @@ Set it to `0ms` to disable animation.
 ## <a name="image_properties"></a> Image properties
 The following config can be used per-image basis.
 <ul>
-<li><a href="#lazy_loading_config">lazyLoading</a></li>
+<li><a href="#lazy_loading_config">lazyload</a></li>
 <li><a href="#do_not_replace_url">doNotReplaceURL</a></li>
 <li><a href="#params">params</a></li>
 <li><a href="#low_preview_quality">lowPreviewQuality</a></li>

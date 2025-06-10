@@ -2,7 +2,6 @@ const DEFAULT_VALUES = {
   token: '',
   domain: 'cloudimg.io',
   customDomain: false,
-  lazyLoading: true,
   lazyLoadOffset: 100,
   baseURL: '',
   apiVersion: 'v7',
