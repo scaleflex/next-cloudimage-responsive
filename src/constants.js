@@ -4,7 +4,7 @@ const DEFAULT_VALUES = {
   customDomain: false,
   lazyLoadOffset: 100,
   baseURL: '',
-  apiVersion: 'v7',
+  apiVersion: null,
   params: 'org_if_sml=1',
   doNotReplaceURL: false,
   limitFactor: 100,
